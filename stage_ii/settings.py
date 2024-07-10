@@ -108,10 +108,10 @@ SIMPLE_JWT = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER' : config('DB_USER'),
-        'PASSWORD' : config('DB_PASSWORD'), 
-        'HOST' : config('DB_HOST'),
+        'NAME': 'users_db',
+        'USER' : 'postgres',
+        'PASSWORD' : 'bisola100', 
+        'HOST' : 'localhost',
     }
 }
 
@@ -161,8 +161,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = "users.CustomUser"
 
 
-if 'DATABASE_URL' in os.environ:
-    DATABASES['default'] = dj_database_url.config(
-        conn_max_age=500,
-        conn_health_checks=True,
-    )
+# if 'DATABASE_URL' in os.environ:
+#     DATABASES['default'] = dj_database_url.config(
+#         conn_max_age=500,
+#         conn_health_checks=True,
+#     )
